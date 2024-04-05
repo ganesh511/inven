@@ -25,14 +25,14 @@ def add_item():
 
 # Function to read inventory from CSV
 def read_inventory():
-    with open('data/inventory.csv', 'r') as file:
+    with open('inventory.csv', 'r') as file:
         reader = csv.DictReader(file)
         inventory = [row for row in reader]
     return inventory
 
 # Function to add item to inventory CSV
 def add_to_inventory(name, quantity, price):
-    with open('data/inventory.csv', 'a', newline='') as file:
+    with open('inventory.csv', 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([name, quantity, price])
 
